@@ -1,6 +1,6 @@
 # 交付：工作台学院课程列表页 /academy/courses
 
-仓库（公开，可直接打开）：https://github.com/liaoyuqing/clawhunt-2053-academy-course-list ，main = 665a812。React 18 + TypeScript(strict) + TDesign React 1.18，接口全部走本地 mock，`npm install && npm run dev` 即可打开 `http://127.0.0.1:5201/academy/courses`，无需后端。全部为虚构数据，交付物不含客户名称。
+仓库（公开，可直接打开）：https://github.com/liaoyuqing/clawhunt-2053-academy-course-list ，分支 `main`（代码、截图、录屏、检查日志与本文均为该分支最新提交，可直接浏览）。React 18 + TypeScript(strict) + TDesign React 1.18，接口全部走本地 mock，`npm install && npm run dev` 即可打开 `http://127.0.0.1:5201/academy/courses`，无需后端。全部为虚构数据，交付物不含客户名称。
 
 ## 一、交付物清单
 
@@ -25,7 +25,7 @@
 
 **证据**：`docs/screens/state-draft.png`、`state-pending_review.png`、`state-published.png`、`state-offline.png`、`state-archived.png`（状态标签与操作列同屏），每张另有 `-actions-closeup.png` 操作列特写，另加 `matrix-overview-all-states.png`（36 条全状态同屏）。每行 DOM 的 `data-actions` 已由脚本写入 `docs/screens/evidence.json`，可与 README 矩阵逐字比对。
 
-**自动化**：`tests/page-ac1-buttons.test.tsx` 的「每行渲染的按钮集合与 actionMatrix 完全相等（管理员：有 publish 权限）」对 36 条 mock 逐行断言 DOM 等于矩阵返回值；「不渲染的按钮在 DOM 里完全不存在（不是 disabled）」用 `queryByRole('button', { name: '审批' })` 为 null 断言。`tests/readme-matrix.test.ts` 的「矩阵区块与 actions.ts 现算结果逐字一致」直接读仓库里的 `README.md`，把矩阵区块与现算结果逐字比较 —— 手改文档或改代码不重导出都会变红。
+**自动化**（用例名与仓库逐字一致）：`tests/page-ac1-buttons.test.tsx` 5 个用例 —— 「每行渲染的按钮集合与 actionMatrix 完全相等（管理员：有 publish 权限）」对 36 条 mock 逐行断言 DOM 的 `data-actions` 等于矩阵返回值；「不渲染的按钮在 DOM 里完全不存在（不是 disabled）」用 `queryByRole('button', { name: '审批' })` 为 null 断言；另有「5 种状态各自至少有一行，且状态标签渲染出对应中文」「草稿与已归档才有删除按钮；已发布有下架无删除」「批量操作只有「批量归档」一个按钮（无批量删除/批量上下架）」。`tests/readme-matrix.test.ts` 5 个用例里的「矩阵区块与 actions.ts 现算结果逐字一致」直接读仓库根目录的 `README.md`，把 `<!-- ACTION_MATRIX:BEGIN -->` 区块与现算结果逐字比较 —— 手改文档、或改了代码不重导出，都会变红；「README 的 AC 证据段落逐条给出截图/录屏文件名，且文件真实存在」保证文档不会引用不存在的文件。
 
 **复现**：`npm run serve` 后 `npm run screens`，或浏览器打开 `http://127.0.0.1:5201/academy/courses?status=draft`（把 draft 换成其余 4 个状态）。
 
@@ -37,7 +37,7 @@
 
 **运行实测**（`docs/screens/evidence.json` 的 `ac2` 段）：刷新前后 URL 完全相同；刷新后关键词「招商」、勾选「草稿/已发布」、结果 2 行。
 
-**自动化**：`tests/page-ac2-url.test.tsx` 的 8 个用例。「刷新」在组件测试里等价于用同一 URL 重建路由（`renderAt()` 每次新建 memory router），因此若筛选值不来自 URL 必然失败。核心用例：「带着完整 URL 进入：筛选控件全部回填，且与 URL 完全一致」「恢复出来的筛选条件真的作用到了数据上（不是只回填了控件）」「取消勾选后参数消失，回到干净 URL（不留下空参数）」「手改坏 URL 也能打开：非法状态被丢弃，页面不白屏」。
+**自动化**（用例名与仓库逐字一致）：`tests/page-ac2-url.test.tsx` 共 8 个用例。「刷新」在组件测试里等价于用同一 URL 重建路由（`renderAt()` 每次新建 memory router），若筛选值不来自 URL 必然失败。核心用例：「带着完整 URL 进入：筛选控件全部回填，且与 URL 完全一致」「恢复出来的筛选条件真的作用到了数据上（不是只回填了控件）」「关键词输入后 URL 立即出现 q 参数，页码回到第 1 页」「勾选状态复选框后 URL 的 status 参数按固定顺序追加」「取消勾选后参数消失，回到干净 URL（不留下空参数）」「「重置」清空全部筛选参数」「翻页写进 URL，重新挂载后仍在同一页」「手改坏 URL 也能打开：非法状态被丢弃，页面不白屏」。
 
 ## 五、AC3 · 无 publish 权限时不显示审批按钮（截图）
 
@@ -45,14 +45,14 @@
 
 **证据**：`docs/screens/ac3-no-publish-permission.png`（账号「演示 · 课程运营」，无 publish 权限，8 条待审核行只有「复制」，DOM 内审批按钮数 **0**）；`docs/screens/ac3-control-with-publish-permission.png`（对照组，账号「演示 · 平台管理员」，同一批行出现「审批」，DOM 内 **7** 个）；`docs/screens/ac3-boundary-self-submitted.png`（边界：账号「演示 · 审核专员」有 publish 权限但本人是 CRS-1012 / CRS-1015 的提交人，这两行仍只有「复制」，其余行有「审批」）。计数由页面 DOM 实时统计写入 `evidence.json` 的 `ac3` 段；账号切换动态证据见 `docs/recording/ac3-permission-switch.webm`（DOM 计数 0 → 7 → 0，见 `docs/recording/ac3-switch-evidence.json`）。
 
-**自动化**：`tests/page-ac3-permission.test.tsx` 的 5 个用例，含「无 publish 权限账号：待审核行只有「复制」，没有任何审批按钮节点」「边界：有 publish 权限但本人是提交人 → 该行不渲染审批，其余行照常」「页面顶部切换账号后按钮组合立即变化（权限来自 IAM mock，不写死在组件里）」。
+**自动化**（用例名与仓库逐字一致）：`tests/page-ac3-permission.test.tsx` 5 个用例 —— 「无 publish 权限账号：待审核行只有「复制」，没有任何审批按钮节点」「对照组：有 publish 权限且非提交人时，同一批待审核行出现审批按钮」「边界：有 publish 权限但本人是提交人 → 该行不渲染审批，其余行照常」「页面顶部切换账号后按钮组合立即变化（权限来自 IAM mock，不写死在组件里）」「三个 mock 账号的权限集合与 README 描述一致」。
 
 ## 六、执行结果（真实输出，日志在仓库）
 
 | 检查 | 命令 | 结果 | 日志 |
 | --- | --- | --- | --- |
 | 类型检查 | `npx tsc --noEmit` | EXIT=0，零错误 | `docs/checks/tsc.log` |
-| 测试 | `npx vitest run` | 7 个测试文件 62 个用例全部通过 | `docs/checks/vitest.log` |
+| 测试 | `npx vitest run` | 7 个测试文件、62 个用例全部通过（Test Files 7 passed (7)，Tests 62 passed (62)） | `docs/checks/vitest.log` |
 | 构建 | `npx vite build` | EXIT=0 | `docs/checks/build.log` |
 | 外链核对 | grep Google Fonts / jsdelivr / unpkg / cdnjs / gstatic / 阿里云 / Cloudinary / GA | 零命中 | `docs/checks/no-external-refs.log` |
 
