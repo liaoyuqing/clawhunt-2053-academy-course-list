@@ -5,3 +5,7 @@ repo-files.tmp.txt
 scripts/precheck.mjs
 docs/checks/precheck.json
 prob2053.json
+scripts/submit-solution.mjs
+docs/checks/submit-payload.json
+docs/checks/submit-response.json
+oa.json
