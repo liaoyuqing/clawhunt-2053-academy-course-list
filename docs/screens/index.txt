@@ -1,0 +1,25 @@
+# 截图索引（AC → 文件 → 说明）
+
+AC1	state-draft.png	草稿(draft)：编辑/复制/提交审核/删除，无下架与审批
+AC1	state-pending_review.png	待审核(pending_review)：复制/审批（管理员非提交人）
+AC1	state-published.png	已发布(published)：复制/下架/归档，无编辑与删除
+AC1	state-offline.png	已下架(offline)：编辑/复制/重新上架/归档
+AC1	state-archived.png	已归档(archived)：复制/删除
+AC1	state-draft-actions-closeup.png	草稿行操作列特写（与矩阵逐字比对）
+AC1	state-pending_review-actions-closeup.png	待审核行操作列特写
+AC1	state-published-actions-closeup.png	已发布行操作列特写
+AC1	state-offline-actions-closeup.png	已下架行操作列特写
+AC1	state-archived-actions-closeup.png	已归档行操作列特写
+AC1	matrix-overview-all-states.png	36 门课程全状态总览（5 种状态同屏）
+AC2	ac2-before-url-01-clean.png	操作前：干净 URL，筛选栏为空
+AC2	ac2-before-url-02-filters-set.png	勾选草稿+已发布、输入关键词「招商」后地址栏出现参数
+AC2	ac2-after-reload-01-restored.png	按 F5 刷新后：筛选栏回填、列表结果一致
+AC2	ac2-deeplink-full-params.png	带完整参数的深链直接打开
+AC2	ac2-malformed-url-still-works.png	手改坏参数（status=bogus&page=-3）仍可打开且非法值被丢弃
+AC3	ac3-no-publish-permission.png	无 publish 权限账号：待审核行只有「复制」，DOM 内 0 个审批按钮
+AC3	ac3-control-with-publish-permission.png	对照组：有 publish 权限且非提交人 → 出现「审批」
+AC3	ac3-boundary-self-submitted.png	边界：有 publish 权限但本人是提交人 → 该行仍无审批，别人的行有
+其它	page-01-default-list.png	默认列表：分页、列排序图标
+其它	page-02-sort-enroll-asc.png	按累计报名数升序（sort=enroll_count:asc）
+其它	page-03-offline-confirm-with-affected.png	下架二次确认，弹窗内显示受影响报名数
+其它	page-04-bulk-archive-bar.png	批量操作条：只有「批量归档」一个操作

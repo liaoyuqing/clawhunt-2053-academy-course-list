@@ -1,0 +1,114 @@
+/*
+ * 全站样式。字体只用系统字体栈，不引用任何 Google Fonts / 外部 CDN；
+ * 所有颜色写成本地变量，运行时零外部请求。
+ */
+:root {
+  --bg: #f3f5f9;
+  --surface: #ffffff;
+  --ink: #1a1f2b;
+  --ink-2: #4b5563;
+  --ink-3: #8b95a5;
+  --line: #e3e8f0;
+  --brand: #0052d9;
+  --brand-weak: #e8f0fe;
+  --danger: #d54941;
+  --warn: #e37318;
+  --ok: #2ba471;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 30, 50, 0.05), 0 8px 24px -12px rgba(20, 30, 50, 0.14);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+
+.list-page { max-width: 1560px; margin: 0 auto; padding: 24px 24px 64px; }
+
+.list-page__head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  margin-bottom: 18px;
+}
+.list-page__head h1 { margin: 0 0 4px; font-size: 21px; letter-spacing: 0.2px; }
+.list-page__head p { margin: 0; color: var(--ink-3); font-size: 13px; }
+.list-page__head b { color: var(--ink); }
+.muted { color: var(--ink-3); }
+
+.account-switcher { min-width: 300px; }
+
+/* ---------- 筛选栏 ---------- */
+.filter-bar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.filter-bar__row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filter-bar__label { color: var(--ink-2); font-size: 13px; min-width: 56px; flex: 0 0 auto; }
+.filter-bar__status { display: flex; gap: 14px; flex-wrap: wrap; }
+/* TDesign 的 Select/Input 内层默认 100% 宽，这里固定外层并让内层跟随，才能排成一行 */
+.filter-bar__select { width: 168px; flex: 0 0 168px; }
+.filter-bar__select .t-select__wrap { width: 100%; }
+.filter-bar__keyword { width: 300px; flex: 0 0 300px; }
+.filter-bar__keyword .t-input__wrap { width: 100%; }
+
+/* ---------- 批量条 ---------- */
+.bulk-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; margin-bottom: 12px;
+  background: var(--brand-weak);
+  border: 1px solid #c9dcff;
+  border-radius: var(--radius);
+  color: var(--ink-2); font-size: 13px;
+}
+.bulk-bar b { color: var(--brand); font-size: 15px; }
+.bulk-bar__hint { color: var(--warn); margin-left: 4px; }
+
+/* ---------- URL 取证条 ---------- */
+.list-page__url {
+  font-size: 12px; color: var(--ink-3);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.list-page__url code {
+  background: #eef2f9; color: var(--ink-2);
+  padding: 2px 8px; border-radius: 6px;
+}
+
+/* ---------- 表格 ---------- */
+.list-page .t-table { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); }
+.list-page .t-table__content { overflow: visible; }
+.course-no { color: var(--ink-2); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; }
+.course-title { color: var(--ink); }
+.course-price { color: var(--ink-3); font-style: normal; font-size: 12px; }
+.action-cell { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
+.action-cell .t-button { padding: 0 6px; }
+
+/* ---------- 分页 ---------- */
+.list-page__pager {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-top: 16px; flex-wrap: wrap;
+}
+.list-page__total { color: var(--ink-3); font-size: 13px; }
+
+.confirm-emphasis { color: var(--danger); }
+.confirm-emphasis b { font-size: 16px; }
+
+/* ---------- 矩阵导出页（scripts/export-action-matrix.mjs 渲染用） ---------- */
+.matrix-page { max-width: 1200px; margin: 0 auto; padding: 32px 24px; background: #fff; }
+.matrix-page table { border-collapse: collapse; width: 100%; }
+.matrix-page th, .matrix-page td { border: 1px solid var(--line); padding: 8px 10px; font-size: 13px; }
+.matrix-page th { background: #fafbfd; text-align: left; }

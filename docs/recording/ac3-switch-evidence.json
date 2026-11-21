@@ -1,0 +1,6 @@
+{
+  "approveCountOperator": 0,
+  "approveCountAdmin": 7,
+  "approveCountBack": 0,
+  "note": "审批按钮数由页面 DOM 实时统计"
+}

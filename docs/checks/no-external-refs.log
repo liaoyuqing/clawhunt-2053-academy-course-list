@@ -1,0 +1,16 @@
+# 外部引用核对：源码与构建产物中不得出现外链 CDN / Google Fonts / 第三方云服务
+# 命令：grep -rn 'fonts.googleapis\|cdn.jsdelivr\|unpkg.com\|cdnjs\|fonts.gstatic\|aliyuncs\|cloudinary\|google-analytics' src index.html dist
+# 时间：2026-11-21T21:04:31+08:00
+
+grep EXIT=1  （1 = 零命中，符合要求）
+
+# 构建产物的外链 http(s) 引用（只应出现 w3.org 命名空间与 React 文档注释）
+ //github.com/ungap/url-search-params.
+ //localhost
+ //reactjs.org/docs/error-decoder.html
+ //reactrouter.com/en/main/routers/picking-a-router.
+ //www.w3.org/1998/Math/MathML
+ //www.w3.org/1999/xhtml
+ //www.w3.org/1999/xlink
+ //www.w3.org/2000/svg
+ //www.w3.org/XML/1998/namespace

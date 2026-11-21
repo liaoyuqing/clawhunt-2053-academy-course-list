@@ -1,0 +1,179 @@
+{
+  "ac1": {
+    "account": "u_iam_admin（有 publish 权限）",
+    "states": {
+      "draft": {
+        "courseNo": "CRS-1001",
+        "tag": "草稿",
+        "actions": [
+          "edit",
+          "duplicate",
+          "submit_review",
+          "delete"
+        ]
+      },
+      "pending_review": {
+        "courseNo": "CRS-1008",
+        "tag": "待审核",
+        "actions": [
+          "duplicate",
+          "approve"
+        ]
+      },
+      "published": {
+        "courseNo": "CRS-1016",
+        "tag": "已发布",
+        "actions": [
+          "duplicate",
+          "offline",
+          "archive"
+        ]
+      },
+      "offline": {
+        "courseNo": "CRS-1025",
+        "tag": "已下架",
+        "actions": [
+          "edit",
+          "duplicate",
+          "online",
+          "archive"
+        ]
+      },
+      "archived": {
+        "courseNo": "CRS-1031",
+        "tag": "已归档",
+        "actions": [
+          "duplicate",
+          "delete"
+        ]
+      }
+    }
+  },
+  "ac2": {
+    "urlBeforeReload": "http://127.0.0.1:5201/academy/courses?status=draft,published&q=%E6%8B%9B%E5%95%86",
+    "urlAfterReload": "http://127.0.0.1:5201/academy/courses?status=draft,published&q=%E6%8B%9B%E5%95%86",
+    "keywordAfterReload": "招商",
+    "checkedAfterReload": [
+      "草稿",
+      "已发布"
+    ],
+    "rowsAfterReload": 2,
+    "urlIdentical": true,
+    "deepLinkRows": 1
+  },
+  "ac3": {
+    "account": "u_iam_operator（无 publish 权限）",
+    "approveButtonsInDom": 0,
+    "rows": [
+      {
+        "courseNo": "CRS-1009",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1008",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1010",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1011",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1012",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1013",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1014",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1015",
+        "actions": "duplicate"
+      }
+    ],
+    "controlRows": [
+      {
+        "courseNo": "CRS-1009",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1008",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1010",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1011",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1012",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1013",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1014",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1015",
+        "actions": "duplicate,approve"
+      }
+    ],
+    "reviewerRows": [
+      {
+        "courseNo": "CRS-1009",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1008",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1010",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1011",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1012",
+        "actions": "duplicate"
+      },
+      {
+        "courseNo": "CRS-1013",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1014",
+        "actions": "duplicate,approve"
+      },
+      {
+        "courseNo": "CRS-1015",
+        "actions": "duplicate"
+      }
+    ]
+  },
+  "offlineConfirm": {
+    "affectedText": "318"
+  },
+  "bulkBar": {
+    "buttons": [
+      "批量归档",
+      "取消选择"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-11-21T12:59:03.031Z",
+  "base": "http://127.0.0.1:5201",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "note": "Playwright recordVideo 直录，无剪辑；配套逐帧截图见 docs/screens。",
+  "clips": [
+    {
+      "name": "ac2-url-restore-refresh.webm",
+      "bytes": 2275097,
+      "durationSeconds": 17,
+      "sha256": "7217835b6e5a7d25393e69f0e609c31783593a16552d6abc744c2a9867918161"
+    },
+    {
+      "name": "ac3-permission-switch.webm",
+      "bytes": 3176100,
+      "durationSeconds": 19,
+      "sha256": "91055b8fb40b0f3193483b524285ea0714fd4adcd54de2ba13a12ea582c20295"
+    }
+  ]
+}

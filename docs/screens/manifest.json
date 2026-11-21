@@ -1,0 +1,131 @@
+{
+  "capturedAt": "2026-11-21T13:02:40.112Z",
+  "base": "http://127.0.0.1:5201",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "deviceScaleFactor": 1,
+  "count": 23,
+  "duplicateHashes": [
+    "ac2-malformed-url-still-works.png",
+    "page-01-default-list.png"
+  ],
+  "files": [
+    {
+      "name": "state-draft.png",
+      "bytes": 92816,
+      "sha256": "971f9c0c65ba627b10ee29cbf0d9ee90667962f66659fe7153fa1c6828317995"
+    },
+    {
+      "name": "state-pending_review.png",
+      "bytes": 96160,
+      "sha256": "1a5ffc3c63300e5b3c53bc58b56bc7e3d74229370fece2c17d139f76d5c8d207"
+    },
+    {
+      "name": "state-published.png",
+      "bytes": 106602,
+      "sha256": "4f588174afb4e11901b1fe74ed9f2430de1b0ea2d5d521d523301c43d4c65603"
+    },
+    {
+      "name": "state-offline.png",
+      "bytes": 86816,
+      "sha256": "c59dac8f3b8a2837d628e1411212c372e2b526e47ce359c5c12342523933886b"
+    },
+    {
+      "name": "state-archived.png",
+      "bytes": 79820,
+      "sha256": "2cc2822ead2c979b3cf824e02c925c84b407ff5eab2fb7806245e66d45f2fc99"
+    },
+    {
+      "name": "matrix-overview-all-states.png",
+      "bytes": 315186,
+      "sha256": "5ef200b4bd897e63b80ca75a5f11b84d55fde2e2dad8c468c78dbc987fd77285"
+    },
+    {
+      "name": "state-draft-actions-closeup.png",
+      "bytes": 2103,
+      "sha256": "e2bf37336b9ae0634c0fd70dac1aa1a303cb563c01a48f7347b53d0861d13003"
+    },
+    {
+      "name": "state-pending_review-actions-closeup.png",
+      "bytes": 907,
+      "sha256": "73101a3d37579bc16e8280ffec8a6d5204d304cfdd71f5547215ed915c96311e"
+    },
+    {
+      "name": "state-published-actions-closeup.png",
+      "bytes": 1247,
+      "sha256": "7680799c896fd3075cd0d7c94a9884bcf55d55c2264194046c113ac1e7371cbe"
+    },
+    {
+      "name": "state-offline-actions-closeup.png",
+      "bytes": 1737,
+      "sha256": "85339efe4214c35e302963a058cc3db9280d51ef08c65ca5e894c9b3d64a91ce"
+    },
+    {
+      "name": "state-archived-actions-closeup.png",
+      "bytes": 1092,
+      "sha256": "5fdd7a2ec5702da630336a104f77f1a98461df8d1f2dbf0d70d89d16dc0905d3"
+    },
+    {
+      "name": "ac2-before-url-01-clean.png",
+      "bytes": 110671,
+      "sha256": "2532414d039a5bfa363613a774e35ad8f8f8534ce8d2a00d24d0f7652b6a9105"
+    },
+    {
+      "name": "ac2-before-url-02-filters-set.png",
+      "bytes": 55464,
+      "sha256": "b3473f4ddbf0f8043cc0ca98303b7528120523b38c255eabb622cd8b82309496"
+    },
+    {
+      "name": "ac2-after-reload-01-restored.png",
+      "bytes": 55133,
+      "sha256": "25c74434fcd5a2e770a4ca4e61f6a318d65378a4d8b9020188166911fc457e58"
+    },
+    {
+      "name": "ac2-deeplink-full-params.png",
+      "bytes": 49071,
+      "sha256": "d0750764e1e7784d45629cefa7ae1e36ac4892fa14f573e490868dc45bcba1c8"
+    },
+    {
+      "name": "ac2-malformed-url-still-works.png",
+      "bytes": 92816,
+      "sha256": "971f9c0c65ba627b10ee29cbf0d9ee90667962f66659fe7153fa1c6828317995"
+    },
+    {
+      "name": "ac3-no-publish-permission.png",
+      "bytes": 94949,
+      "sha256": "fae2849eacdc02c851aadeff7bc622cc78e9237ce4f2e1f347374729396ca49b"
+    },
+    {
+      "name": "ac3-control-with-publish-permission.png",
+      "bytes": 96853,
+      "sha256": "45b4331d1302b4a77a8b2c2d63a0babc2748ade5ecaa96f77a180890fbe36686"
+    },
+    {
+      "name": "ac3-boundary-self-submitted.png",
+      "bytes": 96523,
+      "sha256": "5cca740c9e306a0eab6fa74bdea7602a8073f3451aba3258696f15fb97011a02"
+    },
+    {
+      "name": "page-01-default-list.png",
+      "bytes": 110671,
+      "sha256": "2532414d039a5bfa363613a774e35ad8f8f8534ce8d2a00d24d0f7652b6a9105"
+    },
+    {
+      "name": "page-02-sort-enroll-asc.png",
+      "bytes": 131608,
+      "sha256": "83f1ce937e6c6d235db394785c774f0b994bff2dec6db84dad3e3be816a800a0"
+    },
+    {
+      "name": "page-03-offline-confirm-with-affected.png",
+      "bytes": 105337,
+      "sha256": "4fff4e80ae1ac2fba96571437167ad0795ae483e1416e9165eca118f0fbf3737"
+    },
+    {
+      "name": "page-04-bulk-archive-bar.png",
+      "bytes": 110647,
+      "sha256": "559b78bf6982f0d7badd545d9e230cee820d4e27c76d7b354f6b1377d25e2c3d"
+    }
+  ]
+}
