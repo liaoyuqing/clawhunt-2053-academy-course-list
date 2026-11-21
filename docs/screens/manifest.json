@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-21T13:02:40.112Z",
+  "capturedAt": "2026-11-21T13:09:38.664Z",
   "base": "http://127.0.0.1:5201",
   "viewport": {
     "width": 1600,
@@ -7,10 +7,7 @@
   },
   "deviceScaleFactor": 1,
   "count": 23,
-  "duplicateHashes": [
-    "ac2-malformed-url-still-works.png",
-    "page-01-default-list.png"
-  ],
+  "duplicateHashes": [],
   "files": [
     {
       "name": "state-draft.png",
@@ -74,8 +71,8 @@
     },
     {
       "name": "ac2-before-url-02-filters-set.png",
-      "bytes": 55464,
-      "sha256": "b3473f4ddbf0f8043cc0ca98303b7528120523b38c255eabb622cd8b82309496"
+      "bytes": 55508,
+      "sha256": "5e4a34c3345a4a20da2d059e6e2055607015cc2a8a2af6e489f80c60529624e2"
     },
     {
       "name": "ac2-after-reload-01-restored.png",
@@ -89,8 +86,8 @@
     },
     {
       "name": "ac2-malformed-url-still-works.png",
-      "bytes": 92816,
-      "sha256": "971f9c0c65ba627b10ee29cbf0d9ee90667962f66659fe7153fa1c6828317995"
+      "bytes": 115882,
+      "sha256": "c4d6053894d9541881ccbefef2d3ac9a2bc5ececb76216a3b3e568a9c63bbbf1"
     },
     {
       "name": "ac3-no-publish-permission.png",
@@ -108,9 +105,9 @@
       "sha256": "5cca740c9e306a0eab6fa74bdea7602a8073f3451aba3258696f15fb97011a02"
     },
     {
-      "name": "page-01-default-list.png",
-      "bytes": 110671,
-      "sha256": "2532414d039a5bfa363613a774e35ad8f8f8534ce8d2a00d24d0f7652b6a9105"
+      "name": "page-01-list-20-per-page.png",
+      "bytes": 129726,
+      "sha256": "6b69bc6b5caff488ad8ef5d7f5d1345016d95ba8841d3efc102ff44876f64d99"
     },
     {
       "name": "page-02-sort-enroll-asc.png",

@@ -143,8 +143,8 @@ await openList(DIRTY, 'u_iam_admin');
 await shot('ac2-deeplink-full-params');
 evidence.ac2.deepLinkRows = await page.$$eval('[data-testid^="course-no-"]', (nodes) => nodes.length);
 
-// 坏参数不白屏
-await openList('?status=bogus,draft&page=-3&sort=nope:asc', 'u_iam_admin');
+// 坏参数不白屏：bogus 被丢弃、page=-3 与 sort=nope 回落默认，仍然渲染出合法的两状态结果
+await openList('?status=bogus,draft,published&page=-3&sort=nope:asc', 'u_iam_admin');
 await shot('ac2-malformed-url-still-works');
 
 /* ---------------- AC3：无 publish 权限不显示审批 ---------------- */
@@ -187,8 +187,9 @@ evidence.ac3.reviewerRows = reviewerRows;
 
 /* ---------------- 其它页面证据（分页/排序/下架确认/批量归档） ---------------- */
 
-await openList('?pageSize=10', 'u_iam_admin');
-await shot('page-01-default-list');
+// 与 AC2 的干净基线区分开：这一张是 20 条/页的列表形态（分页、列排序图标、13 列全部可见）
+await openList('?pageSize=20', 'u_iam_admin');
+await shot('page-01-list-20-per-page');
 
 await openList('?sort=enroll_count:asc&pageSize=20', 'u_iam_admin');
 await shot('page-02-sort-enroll-asc');
@@ -268,11 +269,11 @@ const INDEX = [
   ['AC2', 'ac2-before-url-02-filters-set.png', '勾选草稿+已发布、输入关键词「招商」后地址栏出现参数'],
   ['AC2', 'ac2-after-reload-01-restored.png', '按 F5 刷新后：筛选栏回填、列表结果一致'],
   ['AC2', 'ac2-deeplink-full-params.png', '带完整参数的深链直接打开'],
-  ['AC2', 'ac2-malformed-url-still-works.png', '手改坏参数（status=bogus&page=-3）仍可打开且非法值被丢弃'],
+  ['AC2', 'ac2-malformed-url-still-works.png', '手改坏参数（status=bogus,draft,published&page=-3&sort=nope:asc）仍可打开：bogus 被丢弃，页码与排序回落默认'],
   ['AC3', 'ac3-no-publish-permission.png', '无 publish 权限账号：待审核行只有「复制」，DOM 内 0 个审批按钮'],
   ['AC3', 'ac3-control-with-publish-permission.png', '对照组：有 publish 权限且非提交人 → 出现「审批」'],
   ['AC3', 'ac3-boundary-self-submitted.png', '边界：有 publish 权限但本人是提交人 → 该行仍无审批，别人的行有'],
-  ['其它', 'page-01-default-list.png', '默认列表：分页、列排序图标'],
+  ['其它', 'page-01-list-20-per-page.png', '20 条/页的列表形态：13 列、列排序图标、分页器'],
   ['其它', 'page-02-sort-enroll-asc.png', '按累计报名数升序（sort=enroll_count:asc）'],
   ['其它', 'page-03-offline-confirm-with-affected.png', '下架二次确认，弹窗内显示受影响报名数'],
   ['其它', 'page-04-bulk-archive-bar.png', '批量操作条：只有「批量归档」一个操作'],
