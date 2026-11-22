@@ -9,3 +9,5 @@ scripts/submit-solution.mjs
 docs/checks/submit-payload.json
 docs/checks/submit-response.json
 oa.json
+detail-after.json
+detail-final.json
